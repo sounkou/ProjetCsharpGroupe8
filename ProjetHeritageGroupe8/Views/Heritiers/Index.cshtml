@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ProjetHeritageGroupe8.Models.Heritier>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.illustration)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.illustration)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.HeritierID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.HeritierID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.HeritierID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

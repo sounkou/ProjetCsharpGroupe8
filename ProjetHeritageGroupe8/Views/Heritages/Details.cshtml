@@ -1,0 +1,54 @@
+﻿@model ProjetHeritageGroupe8.Models.Heritage
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Heritage</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DateDeces)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateDeces)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DateHeritage)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateHeritage)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ecole)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ecole.EcoleID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.montant)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.montant)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Biens)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Biens.BiensID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.HeritageID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

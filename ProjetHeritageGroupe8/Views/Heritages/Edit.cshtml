@@ -1,0 +1,59 @@
+﻿@model ProjetHeritageGroupe8.Models.Heritage
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Heritage</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="HeritageID" />
+            <div class="form-group">
+                <label asp-for="description" class="control-label"></label>
+                <input asp-for="description" class="form-control" />
+                <span asp-validation-for="description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateDeces" class="control-label"></label>
+                <input asp-for="DateDeces" class="form-control" />
+                <span asp-validation-for="DateDeces" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateHeritage" class="control-label"></label>
+                <input asp-for="DateHeritage" class="form-control" />
+                <span asp-validation-for="DateHeritage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EcoleID" class="control-label"></label>
+                <select asp-for="EcoleID" class="form-control" asp-items="ViewBag.EcoleID"></select>
+                <span asp-validation-for="EcoleID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="montant" class="control-label"></label>
+                <input asp-for="montant" class="form-control" />
+                <span asp-validation-for="montant" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BiensID" class="control-label"></label>
+                <select asp-for="BiensID" class="form-control" asp-items="ViewBag.BiensID"></select>
+                <span asp-validation-for="BiensID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

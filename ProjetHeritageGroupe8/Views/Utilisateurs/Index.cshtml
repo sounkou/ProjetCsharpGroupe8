@@ -1,0 +1,59 @@
+﻿@model IEnumerable<ProjetHeritageGroupe8.Models.Utilisateur>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.prenom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.passWord)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.typeUtilisateur)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.prenom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.passWord)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.typeUtilisateur)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.UtilisateurID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.UtilisateurID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.UtilisateurID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
